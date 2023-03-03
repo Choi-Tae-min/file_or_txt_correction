@@ -2,7 +2,7 @@ import os
 from PIL import Image
 
 # Set the directory containing the images
-image_dir = "C:/Users/user/Desktop/restore/color/color"
+image_dir = "Data_path"
 
 # Loop over all image files in the directory
 for i in range(len(os.listdir(image_dir))):
