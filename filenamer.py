@@ -1,23 +1,23 @@
 import os
 
-# 띄어쓰기 제거 함수
+# remove whitespace but you edit your filename too
 def remove_whitespace(filename):
     return filename.replace("_", "_")
+
+#if you want num_digit filename ex)00000.jpg you use this.
 num_digits = 10
-# 파일 이름 변경 함수
+
 
 def rename_files(directory):
-    i=0
+    i=0 #if you want start 1 or another num you change the number.
     for filename in os.listdir(directory):
-        # 띄어쓰기 제거
-        
-        new_filename = '{:0{}}.jpg'.format(i, num_digits)
-        # 파일 이름 변경
+        new_filename = '{:0{}}.jpg'.format(i, num_digits)# you do not edit num_digit, delete num_digit.
+                        #remove_whitespace(filename) if you want to delete specific letter or sentence
         os.rename(os.path.join(directory, filename), os.path.join(directory, new_filename))
         i+=1
         
-# 폴더 경로
-directory_path ="D:/result/color"
+# directory_path
+directory_path ="data_path"
 
-# 파일 이름 변경 함수 호출
+# rename all of files with this format
 rename_files(directory_path)
