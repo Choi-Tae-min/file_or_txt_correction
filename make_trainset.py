@@ -2,14 +2,12 @@ import random
 import os
 
 # Define the path to your data directory
-data_dir = 'C:/Users/user/monodepth2_remake/data'
-file = "image_{:04d}.png"
-# Set the random seed to ensure reproducibility
+data_dir = 'C:/Users/user/datapath'
+#image data file name
+file = "image_{:04d}.png" 
 
 
-# Initialize lists to hold the training and validation file paths
 train_paths = []
-train1_paths = []
 count = 0
 # Iterate directory
 for path in os.listdir(data_dir):
@@ -30,7 +28,7 @@ for i in range(count):
     sum=0           
 for j in range(len(counta)):
      print(counta[j])   
-# Loop over each episode and frame number, and add the corresponding file paths to the appropriate list
+
 for episode_num in range(count):
     for frame_num in range(counta[episode_num]):
         file_name = f"ep{episode_num}/color {frame_num}"
@@ -42,11 +40,9 @@ for episode_num in range(count):
              
        
 
-# Write the training and validation file paths to text files
-with open('C:/Users/user/monodepth2_remake/splits/EndoMapper/train_files.txt', 'w') as f:
+# Write to the training files.txt
+with open('data_path/train_files.txt', 'w') as f:
     for path in train_paths:
         f.write(str(path) + ' l\n')
-    for path in train1_paths:
-        f.write(str(path) + ' r\n')
         
 
